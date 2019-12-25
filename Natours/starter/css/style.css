@@ -6,3 +6,205 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-size: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #777;
+  padding: 0px;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.5),
+      rgba(40, 180, 133, 0.5)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.logo {
+  height: 50px;
+  border-radius: 50%;
+}
+
+/*
+.logo:hover {
+  animation: moveInRight 5s ease-out;
+}
+*/
+
+.text-box {
+  position: absolute;
+  top: 50%; /* relative to parent */
+  left: 50%;
+  transform: translate(-50%, -50%); /* shift the text box to the center */
+  text-align: center;
+  /*
+  background-color: red;
+  */
+}
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  /* to remove little bit of shaking at the end of animation */
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 50px;
+  font-weigth: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /*
+  * do animation three times 
+  animation-iteration-count: 3;
+  */
+
+  /*
+  * animation starts after 1 second
+  animation-delay: 1s;
+  */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 13px;
+  animation: moveInRight 2s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100px);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  80% {
+    transform: translate(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+  /*
+  80% {
+    transform: translate(-5px);
+  }
+  */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/*
+psedo class - element in the special condition
+*/
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* padding top right bottom left */
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 10px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+/*
+In CSS, ::after creates a pseudo-element that is the last child of the selected element. 
+It is often used to add cosmetic content to an element with the content property. 
+It is inline by default.
+*/
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.2) scaleY(1.4);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
