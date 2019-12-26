@@ -1,3 +1,7 @@
+$color-primary: #0b8b36;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
 *,
 *::after,
 *::before {
@@ -7,7 +11,8 @@
   don't use universal setting, but use inherit
   box-sizing: border-box;
   */
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html {
   /*
@@ -16,7 +21,8 @@ html {
   instead, use percentage.
   font-size: 10px;
   */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -25,39 +31,51 @@ body {
   line-height: 1.5;
   color: #777;
   padding: 0rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.5), rgba(40, 180, 133, 0.5)), url(../img/hero.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.5),
+      rgba($color-primary-dark, 0.5)
+    ),
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); }
-  .header__logo-box {
+  clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+
+  &__logo-box {
     position: absolute;
     top: 3rem;
-    left: 3rem; }
-  .header__logo {
+    left: 3rem;
+  }
+
+  &__logo {
     height: 5rem;
-    border-radius: 50%; }
-  .header__text-box {
+    border-radius: 50%;
+  }
+
+  &__text-box {
     position: absolute;
-    top: 50%;
-    /* relative to parent */
+    top: 50%; /* relative to parent */
     left: 50%;
-    transform: translate(-50%, -50%);
-    /* shift the text box to the center */
+    transform: translate(-50%, -50%); /* shift the text box to the center */
     text-align: center;
     /*
     background-color: red;
-    */ }
+    */
+  }
+}
 
 /*
 .logo:hover {
   animation: moveInRight 5s ease-out;
 }
 */
+
 .heading-primary {
   color: white;
   /*
@@ -65,8 +83,9 @@ body {
   */
   /* to remove little bit of shaking at the end of animation */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
+  margin-bottom: 6rem;
+
+  &--main {
     display: block;
     font-size: 5rem;
     font-weigth: 400;
@@ -74,37 +93,52 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
     /*
     * do animation three times 
     animation-iteration-count: 3;
     */
+
     /*
     * animation starts after 1 second
     animation-delay: 1s;
-    */ }
-  .heading-primary--sub {
+    */
+  }
+
+  &--sub {
     display: block;
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 1.3rem;
-    animation: moveInRight 2s ease-out; }
+    animation: moveInRight 2s ease-out;
+  }
+}
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translate(-10rem); }
+    transform: translate(-10rem);
+  }
+
   50% {
-    transform: rotate(180deg); }
+    transform: rotate(180deg);
+  }
+
   80% {
-    transform: translate(0.5rem); }
+    transform: translate(0.5rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translate(10rem); }
+    transform: translate(10rem);
+  }
   /*
   80% {
     transform: translate(-.5rem);
@@ -112,20 +146,27 @@ body {
   */
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /*
 psedo class - element in the special condition
 */
-.btn:link, .btn:visited {
+
+@mixin btn-link-visited {
   text-transform: uppercase;
   text-decoration: none;
   /* padding top right bottom left */
@@ -133,44 +174,61 @@ psedo class - element in the special condition
   display: inline-block;
   border-radius: 1rem;
   transition: all 0.2s;
-  position: relative; }
+  position: relative;
+}
 
-.btn:hover {
+@mixin hover_animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
-  transform: translateY(-0.3rem);
-  /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
-  .btn:hover::after {
-    transform: scaleX(1.2) scaleY(1.4);
-    opacity: 0; }
+}
 
-.btn:active {
-  transform: translateY(-0.1rem); }
+.btn {
+  &:link,
+  &:visited {
+    @include btn-link-visited;
+  }
+  &:hover {
+    @include hover_animated;
+    transform: translateY(-0.3rem);
+    /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
+    box-shadow: 0 1rem 2rem rgba(black, 0.3);
+    &::after {
+      transform: scaleX(1.2) scaleY(1.4);
+      opacity: 0;
+    }
+  }
 
-.btn:after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 1rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s; }
+  &:active {
+    transform: translateY(-0.1rem);
+  }
 
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; }
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 
-.btn--white {
-  background-color: #fff;
-  color: #777;
-  /*
+  &--animated {
+    @include hover_animated;
+  }
+
+  &--white {
+    background-color: #fff;
+    color: #777;
+    /*
     In CSS, ::after creates a pseudo-element that is the last child of the selected element. 
     It is often used to add cosmetic content to an element with the content property. 
     It is inline by default.
-    */ }
-  .btn--white::after {
-    background-color: #fff; }
+    */
+    &::after {
+      background-color: #fff;
+    }
+  }
+}
