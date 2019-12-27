@@ -1,0 +1,16 @@
+.section-about {
+  background-color: rgb(248, 241, 241);
+  padding: 10em 0;
+  margin-top: -10vh;
+}
+
+.section-streamers {
+  padding: 10rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(black, 0.6),
+      rgba(black, 0.8)
+    ),
+    url(../img/streamingwar.png);
+  background-size: cover;
+}

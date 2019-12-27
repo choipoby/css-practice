@@ -1,0 +1,76 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: #777;
+}
+
+.heading-1 {
+  color: white;
+  /*
+  text-transform: uppercase;
+  */
+  /* to remove little bit of shaking at the end of animation */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weigth: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    /*
+    * do animation three times 
+    animation-iteration-count: 3;
+    */
+
+    /*
+    * animation starts after 1 second
+    animation-delay: 1s;
+    */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1.3rem;
+    animation: moveInRight 2s ease-out;
+  }
+}
+
+.heading-2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, darkgreen, lightgreen);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(20deg);
+
+    text-shadow: 0.5rem 1rem 2rem rgba(black, 0.3);
+  }
+}
+
+.heading-3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

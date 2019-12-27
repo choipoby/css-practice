@@ -1,0 +1,23 @@
+@mixin btn-link-visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* padding top right bottom left */
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  position: relative;
+}
+
+@mixin hover_animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

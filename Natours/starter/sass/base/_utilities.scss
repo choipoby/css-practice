@@ -1,0 +1,21 @@
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 2rem;
+}
+.u-margin-bottom-large {
+  margin-bottom: 4rem;
+}
+
+.gradation-effect {
+  background-image: linear-gradient(to right, darkgreen, lightgreen);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+}

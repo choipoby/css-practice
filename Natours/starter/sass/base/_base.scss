@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*
+  don't use universal setting, but use inherit
+  box-sizing: border-box;
+  */
+  box-sizing: inherit;
+}
+
+html {
+  /*
+  for easy rem calculation. 
+  but, specifying it px is not a good practice because this will impact user setting.
+  instead, use percentage.
+  font-size: 10px;
+  */
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0rem;
+  box-sizing: border-box;
+}

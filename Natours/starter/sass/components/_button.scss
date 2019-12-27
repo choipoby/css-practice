@@ -1,0 +1,78 @@
+.btn {
+  &:link,
+  &:visited {
+    @include btn-link-visited;
+  }
+  &:hover {
+    @include hover_animated;
+    transform: translateY(-0.3rem);
+    /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; */
+    box-shadow: 0 1rem 2rem rgba(black, 0.3);
+    &::after {
+      transform: scaleX(1.2) scaleY(1.4);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    @include hover_animated;
+  }
+
+  &--white {
+    background-color: #fff;
+    color: #777;
+    /*
+    In CSS, ::after creates a pseudo-element that is the last child of the selected element. 
+    It is often used to add cosmetic content to an element with the content property. 
+    It is inline by default.
+    */
+    &::after {
+      background-color: #fff;
+    }
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    /*
+    font-size: $default-font-size;
+    color: blueviolet;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid lightgreen;
+    padding: 3px;
+    */
+    @include btn-link-visited;
+    padding: 3px;
+  }
+
+  &:hover {
+    background-color: lightgreen;
+    color: white;
+    box-shadow: 0 1rem 2rem rgba(black, 0.15);
+    transfor: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba(black, 0.15);
+    transfor: translateY(0);
+  }
+}

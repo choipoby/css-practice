@@ -1,0 +1,26 @@
+.streamer-box {
+  height: 20rem;
+  background-color: rgba(white, 0.8);
+  font-size: 1.5rem;
+  //padding: 0.5rem;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(black, 0.15);
+  transition: transition 0.3s;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  &__icon {
+    background-image: linear-gradient(to right, darkgreen, lightgreen);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__text {
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.1);
+  }
+}
