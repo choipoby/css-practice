@@ -138,12 +138,20 @@ body {
 .section-about {
   background-color: #f8f1f1;
   padding: 10em 0;
-  margin-top: -10vh; }
+  margin-top: 0vh; }
 
 .section-streamers {
   padding: 10rem 0;
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../img/streamingwar.png);
   background-size: cover; }
+
+.section_shows {
+  background-color: lightgray;
+  padding: 25rem 0 15rem 0; }
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -195,6 +203,13 @@ body {
   .btn--white::after {
     background-color: #fff; }
 
+.btn--black {
+  background-color: black;
+  color: white; }
+  .btn--black:hover {
+    background-color: red;
+    color: white; }
+
 .btn-text:link, .btn-text:visited {
   /*
     font-size: $default-font-size;
@@ -227,24 +242,22 @@ body {
 .composition {
   position: relative; }
   .composition__photo {
-    width: 55%;
+    width: 40%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
     border-radius: 2px;
     position: absolute;
     z-index: 10;
-    transition: all 0.2s;
-    outline-offset: 2rem; }
+    transition: all 0.2s; }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
     .composition__photo--p2 {
-      right: 0;
+      right: 10%;
       top: 2rem; }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover {
-      outline: 1.5rem solid lightgreen;
       transform: scale(1.1);
       box-shadow: 0 2.5rm 4 rem rgba(0, 0, 0, 0.5);
       z-index: 20; }
@@ -275,13 +288,132 @@ body {
   .streamer-box:hover {
     transform: translateY(-1.5rem) scale(1.1); }
 
+.story {
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1rem;
+  transform: skewX(-12deg); }
+  .story > * {
+    transform: skewX(12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: orange;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateY(-3rem) translateX(-4rem) skewX(12deg);
+    position: relative; }
+  .story__image {
+    height: 100%;
+    transform: translate(-2rem);
+    transition: all 0.5s; }
+    .story__image:hover {
+      background-color: orange; }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__image {
+    transform: scale(1.5);
+    filter: blur(4px) brightness(90%); }
+
+.card {
+  height: 50rem;
+  color: white;
+  perspective: 150rem; }
+  .card__side {
+    background-color: orange;
+    width: 100%;
+    height: 50rem;
+    transition: all 0.7s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+    overflow: hidden; }
+    .card__side--front {
+      background-color: black; }
+    .card__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, orange, orangered); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__badge {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 5px;
+    background-size: cover;
+    background-image: url(../img/netflix-badge.png);
+    z-index: 340;
+    position: absolute;
+    box-shadow: 0 1.5rem 4rem rgba(255, 255, 255, 0.3); }
+  .card__picture {
+    background-size: cover;
+    height: 35rem;
+    background-blend-mode: lighten; }
+    .card__picture-1 {
+      background-image: url(../img/lostinspace.jpg); }
+    .card__picture-2 {
+      background-image: url(../img/strangerthings.jpg); }
+    .card__picture-3 {
+      background-image: url(../img/papel.jpg); }
+    .card__picture-4 {
+      background-image: url(../img/crown.jpg); }
+  .card__heading {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0rem; }
+  .card__ratings ul {
+    list-style: none;
+    width: 80%; }
+    .card__ratings ul li {
+      font-size: 2rem;
+      padding: 1rem; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.5;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.5), rgba(40, 180, 133, 0.5)), url(../img/hero.jpg);
+  height: 30vh;
+  background-image: linear-gradient(to right bottom, rgba(128, 128, 128, 0.7), rgba(0, 0, 0, 0.9)), url(../img/disney-titles.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); }
+  position: relative; }
   .header__logo-box {
     position: absolute;
     top: 3rem;

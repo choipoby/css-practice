@@ -1,7 +1,7 @@
 .section-about {
   background-color: rgb(248, 241, 241);
   padding: 10em 0;
-  margin-top: -10vh;
+  margin-top: 0vh;
 }
 
 .section-streamers {
@@ -13,4 +13,19 @@
     ),
     url(../img/streamingwar.png);
   background-size: cover;
+
+  & > * {
+    // applied to only the direct child
+    //transform: skewY(13deg);
+  }
+}
+
+.section_shows {
+  background-color: lightgray;
+  padding: 25rem 0 15rem 0;
+}
+
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
 }

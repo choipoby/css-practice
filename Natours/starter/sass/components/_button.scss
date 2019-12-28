@@ -47,6 +47,16 @@
       background-color: #fff;
     }
   }
+
+  &--black {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: red;
+      color: white;
+    }
+  }
 }
 
 .btn-text {
