@@ -8,6 +8,11 @@
     margin-bottom: $gutter-vertical;
   }
 
+  @include media_query(tab-port) {
+    max-width: 50% !important;
+    padding: 0 3rem;
+  }
+
   @include clearfix;
 
   [class^="col-"] {
@@ -15,6 +20,14 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include media_query(tab-port) {
+        margin-right: 0;
+        margin-bottom: 6px;
+      }
+    }
+
+    @include media_query(tab-port) {
+      width: 100% !important;
     }
   }
   .col-1-of-2 {

@@ -1,0 +1,144 @@
+.container {
+  max-width: 120rem;
+  min-height: 50rem;
+  margin: 0 auto;
+  background-color: var(--ColorGreyLight-2);
+  box-shadow: var(--ShadowDark-1);
+
+  @media only screen and (max-width: $bpLargest) {
+    margin: 0;
+  }
+}
+
+.header {
+  font-size: 1.4rem; //14px
+  height: 6rem;
+  background-color: white;
+  border-bottom: 2px solid var(--ColorGreyLight-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+
+  @media only screen and (max-width: $bpMedium) {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  background-color: var(--ColorGreyDark-1);
+
+  /*
+  The flex property is a shorthand property for:
+  flex-grow
+  flex-shrink
+  flex-basis
+  default: flex: 0 1 auto;
+  */
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-view {
+  background-color: white;
+  flex: 1;
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  font-size: 1.4rem;
+  background-color: var(--ColorGreyLight-2);
+  border-bottom: var(--Line);
+  //height: 100%;
+
+  @media only screen and (max-width: $bpMedium) {
+    flex-direction: column;
+    //align-self: stretch;
+  }
+}
+
+.description {
+  background-color: #fff;
+  box-shadow: var(--ShadowLight-1);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  @media only screen and (max-width: $bpMedium) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.user-reviews {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    flex: 0 0 50%;
+  }
+
+  font-size: 1.4rem;
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--Line);
+  border-bottom: var(--Line);
+
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+
+    // older browser
+    // background-image: url(../img/chevron-right.svg);
+    // background-size; cover;
+
+    // newer browser - mask
+    background-color: var(--ColorOrange);
+    -webkit-mask-image: url(../img/chevron-right.svg);
+    -webkit-mask-size: cover;
+  }
+}
+
+.recommend {
+  display: flex;
+  align-items: center;
+
+  color: var(--ColorGreyDark-2);
+
+  &__count {
+    // 양옆 끝에 놓는법.
+    margin-right: auto;
+  }
+
+  &__photo {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    border: 3px solid white;
+
+    &:not(:last-child) {
+      margin-right: -2rem;
+    }
+  }
+}

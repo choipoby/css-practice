@@ -1,0 +1,85 @@
+/*
+COLORS
+
+Primary: #eb2f64
+Primary light: #FF3366
+Primary dark: #BA265D
+
+Primary orange: #ff4800f8
+Primary orange light: #ff9100f8
+Primary orange dark: #ff3300d8
+
+Grey light 1: #faf9f9
+Grey light 2: #f4f2f2
+Grey light 3: #f0eeee
+Grey light 4: #ccc
+
+Grey dark 1: #333
+Grey dark 2: #777
+Grey dark 3: #999
+
+*/
+
+:root {
+  // define variables for global access
+  --ColorOrange: #ff4800f8;
+  --ColorOrangeRed: orangered;
+  --ColorOrangeLight-1: #ff7b00fb;
+  --ColorOrangeDark-1: rgb(177, 6, 6);
+  --ColorGreyLight-1: #faf9f9;
+  --ColorGreyLight-2: #f4f2f2;
+  --ColorGreyLight-3: #f0eeee;
+  --ColorGreyLight-4: #ccc;
+
+  // for text
+  --ColorGreyDark-1: #333;
+  --ColorGreyDark-2: #777;
+  --ColorGreyDark-3: #999;
+
+  --ShadowDark-1: 0 2rem 6rem rgba(0, 0, 0, 0.5);
+  --ShadowLight-1: 0 2rem 6rem rgba(0, 0, 0, 0.1);
+  --Line: 1px solid var(--ColorGreyLight-2);
+}
+
+$bpLargest: 75em; // 1200 pixel
+$bpLarge: 68.5em; // 1100 pixel
+$bpMedium: 56.25em; // 900pixel
+$bpSmall: 37.5em;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  //color: rgba(#ff7b00fb);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px(browser default) = 62.5%
+
+  @media only screen and (max-width: $bpLarge) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  /*
+  background-image: linear-gradient(
+    to right bottom,
+    var(--ColorOrangeLight-1),
+    var(--ColorOrangeDark-1)
+  );
+  */
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: var(--ColorGreyDark-1);
+}

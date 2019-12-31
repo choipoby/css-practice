@@ -15,6 +15,10 @@
   }
 
   &__navigation {
+    display: inline-block;
+    @include media_query(tab-port) {
+      text-align: center;
+    }
   }
 
   &__list {
@@ -25,6 +29,9 @@
     display: inline-block;
     &:not(:last-child) {
       margin-right: 3rem;
+    }
+    @include media_query(tab-port) {
+      margin-right: 0;
     }
   }
 
@@ -47,5 +54,9 @@
 
   &__copyright {
     float: right;
+    @include media_query(tab-port) {
+      float: none;
+      text-align: center;
+    }
   }
 }

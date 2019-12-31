@@ -1,16 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        
-        <title>trillo &mdash; Your all-in-one booking app</title>
-    </head>
-    <body>
-        
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>StRANKING &mdash; Discover what to watch</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="img/hyde_head.png" alt="stranking logo" class="logo" />
+        <span class="service-name">stranking</span>
+        <form action="#" class="search">
+          <input type="text" class="search__input" placeholder="Search Shows" />
+          <button class="search__button">
+            <svg class="search__icon">
+              <use xlink:href="icon/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+          </button>
+        </form>
+
+        <nav class="user-nav">
+          <div class="user-nav__icon-box">
+            <svg class="user-nav__icon">
+              <use xlink:href="icon/sprite.svg#icon-bookmark"></use>
+            </svg>
+            <span class="user-nav__notification">7345</span>
+          </div>
+          <div class="user-nav__icon-box">
+            <svg class="user-nav__icon">
+              <use xlink:href="icon/sprite.svg#icon-chat"></use>
+            </svg>
+            <span class="user-nav__notification">236</span>
+          </div>
+          <div class="user-nav__user">
+            <img
+              src="img/profile.jpg"
+              alt="user photo"
+              class="user-nav__user-photo"
+            />
+            <span class="user-nav__user-name">Geralt</span>
+          </div>
+        </nav>
+      </header>
+      <div class="content">
+        <nav class="sidebar">
+          <div>
+            <ul class="side-nav">
+              <li class="side-nav__item">
+                <a href="#" class="side-nav__link">
+                  <svg class="side-nav__icon">
+                    <use xlink:href="icon/sprite.svg#icon-home"></use>
+                  </svg>
+                  <span class="side-nav__menu">Hotel</span>
+                </a>
+              </li>
+
+              <li class="side-nav__item">
+                <a href="#" class="side-nav__link">
+                  <svg class="side-nav__icon">
+                    <use
+                      xlink:href="icon/sprite.svg#icon-aircraft-take-off"
+                    ></use>
+                  </svg>
+                  <span class="side-nav__menu">Flight</span>
+                </a>
+              </li>
+
+              <li class="side-nav__item">
+                <a href="#" class="side-nav__link">
+                  <svg class="side-nav__icon">
+                    <use xlink:href="icon/sprite.svg#icon-key"></use>
+                  </svg>
+                  <span class="side-nav__menu">Car</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="legal">
+            &copy; 2020 by StRanking. All rights reserved.
+          </div>
+        </nav>
+        <main class="hotel-view">
+          <div class="gallery">
+            <figure class="gallery__item">
+              <img
+                src="img/hotel-1.jpg"
+                alt="photo of hotel-1"
+                class="gallery__photo"
+              />
+            </figure>
+            <figure class="gallery__item">
+              <img
+                src="img/hotel-2.jpg"
+                alt="photo of hotel-2"
+                class="gallery__photo"
+              />
+            </figure>
+            <figure class="gallery__item">
+              <img
+                src="img/hotel-3.jpg"
+                alt="photo of hotel-3"
+                class="gallery__photo"
+              />
+            </figure>
+          </div>
+
+          <div class="overview">
+            <h1 class="overview__heading">
+              Hotel Songguri
+            </h1>
+            <div class="overview__heart">
+              <svg class="overview__icon">
+                <use xlink:href="icon/sprite.svg#icon-heart"></use>
+              </svg>
+              <svg class="overview__icon">
+                <use xlink:href="icon/sprite.svg#icon-heart"></use>
+              </svg>
+              <svg class="overview__icon">
+                <use xlink:href="icon/sprite.svg#icon-heart"></use>
+              </svg>
+              <svg class="overview__icon">
+                <use xlink:href="icon/sprite.svg#icon-heart"></use>
+              </svg>
+              <svg class="overview__icon">
+                <use xlink:href="icon/sprite.svg#icon-heart"></use>
+              </svg>
+            </div>
+
+            <div class="overview__location">
+              <svg class="overview__icon">
+                <use xlink:href="icon/sprite.svg#icon-location-pin"></use>
+              </svg>
+              <button class="btn-inline">Los Gatos</button>
+            </div>
+
+            <div class="overview__rating">
+              <div class="overview__rating-avg">8.6</div>
+              <div class="overview__rating-count">4523 votes</div>
+            </div>
+          </div>
+
+          <!-- details -->
+          <div class="detail">
+            <div class="description">
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                maiores magni excepturi delectus alias, unde rem ullam. Atque
+                impedit dolorum repudiandae amet doloribus accusamus dicta
+                excepturi numquam? Autem, voluptatem fugit.
+              </p>
+
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos, eum? Obcaecati commodi saepe provident dignissimos.
+                Voluptates eius nostrum fugit rerum sapiente amet atque ea eaque
+                eum libero, fuga et asperiores?
+              </p>
+              <ul class="list">
+                <li class="list__item">Guri is kind</li>
+                <li class="list__item">Guri is cute</li>
+                <li class="list__item">Curi is pretty</li>
+                <li class="list__item">Guri is wise</li>
+                <li class="list__item">Guri is kind</li>
+                <li class="list__item">Guri is cute</li>
+                <li class="list__item">Curi is pretty</li>
+                <li class="list__item">Guri is wise</li>
+                <li class="list__item">Guri is kind</li>
+                <li class="list__item">Guri is cute</li>
+                <li class="list__item">Curi is pretty</li>
+                <li class="list__item">Guri is wise</li>
+              </ul>
+              <div class="recommend">
+                <p class="recommend__count">
+                  Froggy and Cleppi recommend this hotel.
+                </p>
+                <div class="recommend__friends">
+                  <img src="img/ottomom.jpg" alt="" class="recommend__photo" />
+                  <img src="img/ottomom.png" alt="" class="recommend__photo" />
+                  <img src="img/ottomom2.jpg" alt="" class="recommend__photo" />
+                  <img src="img/ottomom1.jpg" alt="" class="recommend__photo" />
+                </div>
+              </div>
+            </div>
+
+            <div class="user-reviews">
+              <figure class="review">
+                <blockquote class="review__text">
+                  The most advanced and modern CSS course on the internet:
+                  master flexbox, CSS Grid, responsive design, and so much more.
+                </blockquote>
+                <figcaption class="review__user">
+                  <img
+                    src="img/ottomom1.jpg"
+                    alt="reviewer1"
+                    class="review__photo"
+                  />
+                  <div class="review__user-box">
+                    <p class="review__user-name">Oppai Eminai</p>
+                    <p class="review__user-date">Feb 582</p>
+                  </div>
+                  <div class="review__rating">7.9</div>
+                </figcaption>
+              </figure>
+
+              <figure class="review">
+                <blockquote class="review__text">
+                  The most advanced and modern CSS course on the internet:
+                  master flexbox, CSS Grid, responsive design, and so much more.
+                </blockquote>
+                <figcaption class="review__user">
+                  <img
+                    src="img/ottomom2.jpg"
+                    alt="reviewer1"
+                    class="review__photo"
+                  />
+                  <div class="review__user-box">
+                    <p class="review__user-name">Oppai Gashina</p>
+                    <p class="review__user-date">Feb 582</p>
+                  </div>
+                  <div class="review__rating">7.9</div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

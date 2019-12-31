@@ -1,0 +1,354 @@
+/////////////////////////////
+// logo
+.logo {
+  height: 5rem;
+  margin-left: 1rem;
+}
+
+.service-name {
+  margin-left: 1rem;
+  color: var(--ColorOrangeRed);
+  //font-weight: bold;
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  @media only screen and (max-width: $bpLargest) {
+    display: none;
+  }
+}
+
+/////////////////////////////
+// search
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 40%;
+  //background-color: orange;
+
+  &__input {
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--ColorGreyLight-2);
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 3px;
+    margin-right: -3.5rem;
+
+    &:focus {
+      border: none;
+      outline: none;
+      background-color: var(--ColorGreyLight-3);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--ColorGreyLight-4);
+    }
+  }
+
+  // adjacent selector
+  &__input:focus + &__button {
+    background-color: var(--ColorGreyLight-3);
+  }
+
+  &__button {
+    border: none;
+    outline: none;
+    background-color: var(--ColorGreyLight-2);
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--ColorGreyDark-3);
+  }
+}
+
+/////////////////////////////
+// user-nav
+.user-nav {
+  //background-color: greenyellow;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  margin-left: 1rem;
+
+  // direct children - in this case, icon_box
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--ColorGreyLight-2);
+  }
+
+  //background-color: yellow;
+  &__icon-box {
+    position: relative;
+  }
+
+  &__icon {
+    height: 2.25rem;
+    width: 2rem;
+    fill: var(--ColorGreyDark-2);
+  }
+
+  &__notification {
+    font-size: 1rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--ColorOrange);
+    color: white;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__user-photo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    //background-size: cover;
+  }
+
+  &__user-name {
+    margin-left: 1rem;
+    color: var(--ColorGreyDark-2);
+  }
+}
+
+/////////////////////////////
+// side-nav
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 2.5rem;
+
+  @media only screen and (max-width: $bpMedium) {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  &__item {
+    @media only screen and (max-width: $bpMedium) {
+      //occupy all row
+      flex: 1;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: var(--ColorGreyLight-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__link:hover {
+    color: greenyellow;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+    fill: currentColor;
+  }
+}
+
+/////////////////////////////
+// legal
+.legal {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--ColorGreyLight-4);
+  padding: 2.5rem;
+
+  @media only screen and (max-width: $bpMedium) {
+    display: none;
+  }
+}
+
+/////////////////////////////
+// gallery
+.gallery {
+  display: flex;
+  &__item {
+  }
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--ColorGreyLight-2);
+
+  @media only screen and (max-width: $bpSmall) {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    /*
+    & > * {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    */
+  }
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+    @media only screen and (max-width: $bpSmall) {
+      padding: 0, 0rem;
+    }
+  }
+
+  &__heart {
+    display: flex;
+    margin-right: auto; // this is magic!!!
+    //background-color: yellowgreen;
+    @media only screen and (max-width: $bpSmall) {
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--ColorOrange);
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+  }
+
+  &__rating {
+    // this rating is one of flex box item. align-self override
+    align-self: stretch;
+
+    background-color: var(--ColorOrange);
+    margin-left: 3rem;
+    padding: 0 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-avg {
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
+
+    &-count {
+      font-size: 1rem;
+    }
+
+    @media only screen and (max-width: $bpSmall) {
+      margin: 0;
+    }
+  }
+}
+
+.btn-inline {
+  border: none;
+  color: var(--ColorOrange);
+  font-size: inherit;
+
+  padding-bottom: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    color: var(--ColorGreyDark-2);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+.review {
+  background-color: white;
+  padding: 3rem 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    margin-bottom: 3rem;
+    z-index: 12;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin-right: 3rem;
+  }
+
+  &__user-box {
+    // push all the way to the right
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__user-date {
+  }
+
+  &__rating {
+    font-size: 3rem;
+    color: var(--ColorOrangeRed);
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -9rem;
+    left: 0rem;
+    font-size: 15em;
+    color: var(--ColorGreyLight-3);
+    font-family: sans-serif;
+    z-index: 1;
+  }
+}
