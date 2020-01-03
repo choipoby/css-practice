@@ -349,7 +349,8 @@ body {
     margin-right: auto; }
     @media only screen and (max-width: 37.5em) {
       .overview__heart {
-        margin-right: 0; } }
+        margin-right: 0;
+        height: 3rem; } }
   .overview__icon {
     width: 2rem;
     height: 2rem;
@@ -359,6 +360,11 @@ body {
     display: flex;
     align-items: center;
     margin-right: 2rem; }
+    @media only screen and (max-width: 37.5em) {
+      .overview__location {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        height: 3rem; } }
   .overview__rating {
     align-self: stretch;
     background-color: var(--ColorOrange);
